@@ -8,6 +8,7 @@ const AddNote = () => {
     const { addNote } = context;
 
     const [note, setNote] = useState({title: "", description: "", tag: "default"});
+    
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
@@ -37,12 +38,14 @@ const AddNote = () => {
                         <input type="text" className="form-control" id="description" name='description' onChange={onChange} />
 
                     </div>
-                    <div className="mb-3 form-check">
 
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" onChange={onChange} />
+                    <div className="mb-3">
+                        <label htmlFor="tag" className="form-label">Tag</label>
 
-                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                        <input type="text" className="form-control" id="tag" name='tag' onChange={onChange} />
+
                     </div>
+
                     <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
                 </form>
             </div>
