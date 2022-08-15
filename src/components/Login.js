@@ -22,8 +22,8 @@ const Login = (props) => {
         if (json.success) {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
-            navigate("/");
             props.showAlert("Logged In Successfully", "success")
+            navigate("/");
         }
         else {
             props.showAlert("Invalid Credentials", "danger")
@@ -35,9 +35,10 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div className='mt-3'>
+            <h2 className='my-3'>Login to continue to iNotebook</h2>
             <form onSubmit={handleSubmit}>
-                <div className="mb-3">
+                <div className="my-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input value={credentials.email} type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp" onChange={onChange} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import noteContext from "../context/notes/noteContext";
-import Notes from './Notes';
 
 
 const AddNote = (props) => {
@@ -13,7 +12,7 @@ const AddNote = (props) => {
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
-        setNote({title: "", description: "", tag: ""})
+        setNote({ title: "", description: "", tag: "" })
         props.showAlert("Added Successfully", "success")
     }
 
